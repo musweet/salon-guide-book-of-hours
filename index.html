@@ -210,8 +210,18 @@ details.panel:not([open]) summary.phead .chev{transform:rotate(-90deg)}
 }
 .fbt:hover{border-color:var(--accent-2)}
 .fbt.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+/* 分类按钮：暖色调 */
+.fbt-cat{border-color:#c9a36b;color:#7a5a2b;background:#fdf8ed}
+.fbt-cat.on{background:#c9a36b;border-color:#c9a36b;color:#fff;font-weight:600}
+/* 性相按钮：冷色调 */
+.fbt-asp{border-color:#7ba3c9;color:#2b5a7a;background:#edf3fc}
+.fbt-asp.on{background:#7ba3c9;border-color:#7ba3c9;color:#fff;font-weight:600}
+/* 分组标签 */
+.filterbar .fs{padding-left:8px;border-left:1px solid var(--line);margin-left:2px;font-weight:700;color:var(--ink)}
 .mitem{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin-bottom:7px}
 .mitem.top{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok) inset;background:#f7fbf7}
+.mitem.banned{border-color:#c0392b;background:#fdf2f0}
+.mitem.banned b{color:#c0392b}
 .mitem b{font-size:14px;font-weight:700;display:block;margin-bottom:3px}
 .mitem i{font-size:11.5px;color:var(--ink-2);font-style:normal;display:block;margin-bottom:4px}
 .mitem .step{font-size:11px;color:var(--ink-3);margin-left:4px}
@@ -707,15 +717,53 @@ function byNeed(f){
   Object.keys(dn).forEach(n=>{ if(hasAspect(f,n)) s++; });
   return s;
 }
+const CATEGORIES = ['前菜','主菜','配菜','甜点'];
+function dishCategory(f){
+  if(!f) return null;
+  // 显式分类字段
+  if(f.分类 && CATEGORIES.includes(f.分类)) return f.分类;
+  return null;
+}
+// 二级筛选切换（分类/性相，多选）
+function toggleCat(c){
+  if(state.catFilter.has(c)) state.catFilter.delete(c);
+  else state.catFilter.add(c);
+  renderAll();
+}
+function toggleAsp(a){
+  if(state.aspFilter.has(a)) state.aspFilter.delete(a);
+  else state.aspFilter.add(a);
+  renderAll();
+}
 function applyFilter(items){
   const f=state.filter;
-  if(f==='match')    return items.filter(x=>(x.match&&x.match.hits)>0);
-  if(f==='canmake')  return items.filter(x=>canCook(x.f||x.n).ok);
-  if(f==='raw')      return items.slice();
-  if(f.startsWith('asp:')){ const a=f.slice(4); return items.filter(x=>!!aspDict((x.f||{}).产物性相)[a]); }
-  // 默认：按满足访客性相数降序（无 match 字段的项排最后）
-  const hits = x => (x.match && x.match.hits) || 0;
-  return items.slice().sort((a,b)=>hits(b)-hits(a) || ((a.f||{}).加工步数||0)-((b.f||{}).加工步数||0));
+  let list;
+  if(f==='match')    list = items.filter(x=>(x.match&&x.match.hits)>0);
+  else if(f==='canmake') list = items.filter(x=>canCook(x.f||x.n).ok);
+  else if(f==='raw') list = items.slice();
+  else list = items.slice();   // sort 默认
+  // 二级：分类
+  if(state.catFilter && state.catFilter.size > 0){
+    list = list.filter(x=>{
+      const c=dishCategory(x.f||dish(x.n));
+      return c && state.catFilter.has(c);
+    });
+  }
+  // 二级：性相（任一命中即保留）
+  if(state.aspFilter && state.aspFilter.size > 0){
+    list = list.filter(x=>{
+      const asp=aspDict((x.f||{}).产物性相);
+      if(!asp) return false;
+      for(const a of state.aspFilter) if(asp[a]) return true;
+      return false;
+    });
+  }
+  // 排序：仅 sort 模式
+  if(f==='sort'){
+    const hits = x => (x.match && x.match.hits) || 0;
+    list.sort((a,b)=>hits(b)-hits(a) || ((a.f||{}).加工步数||0)-((b.f||{}).加工步数||0));
+  }
+  return list;
 }
 
 // ---- 状态 ----
@@ -723,6 +771,7 @@ const state = {
   salon:'', visitors:new Set(), inv:{}, cart:{}, pots:{}, pool:null, locked:false,
   dishTable:{}, drinkTable:{},
   filter:'sort', drinkFilter:'all',
+  catFilter:new Set(), aspFilter:new Set(),   // 二级筛选（分类/性相，可多选）
   ratio: RAT, dishRecipe:{},   // {菜名: [每次上桌所用的做法 need]} 供「下架时按同一做法返还」
   // 工具解锁状态：true = 可用（已解锁），false = 不可用（未解锁）
   // 维基「厨房」页需先修复（解锁条件：铸×6 穹×6）才能使用工作台。
@@ -1164,6 +1213,7 @@ function renderDrinks(){
     out+='<button class="fbt'+(state.drinkFilter===k?' on':'')+'" onclick="setDrinkFilter(\''+escAttr(k)+'\')">'+v+'</button>';
   });
   out+='</div>';
+  if(state.salon && isAlcoBan(state.salon)) out+='<div class="filterbar" style="border-color:#c0392b;background:#fdf2f0"><span style="color:#c0392b;font-weight:700;font-size:12px">⚠「'+state.salon+'」禁烈酒 — 请勿上架含「烈酒」的饮品</span></div>';
 
   // 容器库存摘要（一行显示，不占大版面）
   const allContainers = [...(DRINK_BIG||[]), ...(DRINK_HALF||[]), ...(DRINK_NEAR_FULL||[]), ...(DRINK_NEAR_EMPTY||[])];
@@ -1198,12 +1248,13 @@ function renderDrinks(){
       const hasMatch = drinkAsps.some(d => vInfo.drinkAspects.has(d));
       if(!hasMatch) return;
     }
-    out+='<div class="mitem'+(avail>0?' top':'')+'">';
+    let banned = state.salon && isAlcoBan(state.salon) && isAlcohol(n);
+    out+='<div class="mitem'+(avail>0?' top':'')+(banned?' banned':'')+'">';
     out+=thumb(n);
     out+='<div class="content">';
     out+='<b>'+h(n)+'</b>';
-    if(a) out+='<i>'+h(aspStr(aspDict(a)))+'</i>';
-    if(isAlcohol(n)) out+='<span class="tag-alc">烈酒</span>';
+    if(banned) out+='<span class="tag-alc" style="color:#c0392b;font-weight:700">⚠ 副餐禁用</span>';
+    else if(isAlcohol(n)) out+='<span class="tag-alc">烈酒</span>';
     out+='<span class="step">库存 '+avail+' 杯</span>';
     out+='<span class="tn">已上 ×'+served+'</span>';
     out+='<button class="cook" onclick="doServeDrink(\''+escAttr(n)+'\')"' + (avail>0?'':' disabled') +'>上桌</button>';
@@ -1411,9 +1462,26 @@ function renderTable(){
   // 宴会规则检查
   if(state.salon){
     const sal=SALONS.find(x=>x.名称===state.salon);
+    // 禁烈酒（午前茶/下午茶）
     if(sal && sal.禁烈酒){
       const badAlc=drinkItems.filter(([n])=>isAlcohol(n));
       out+='<div class="warn">「'+h(sal.名称)+'」'+(badAlc.length?'已含烈酒 '+h(badAlc.map(x=>x[0]).join('、'))+'，违反禁烈酒规则':'无烈酒，符合规则')+'。</div>';
+    }
+    // 正餐（午宴/晚宴）必须每类至少 1 道
+    if(sal && sal.类型==='正餐'){
+      const covered={};
+      CATEGORIES.forEach(c=>covered[c]=false);
+      dishItems.forEach(([n])=>{
+        const f=dish(n);
+        const c=dishCategory(f);
+        if(c) covered[c]=true;
+      });
+      const missing=CATEGORIES.filter(c=>!covered[c]);
+      if(missing.length===0){
+        out+='<div class="ok">「'+h(sal.名称)+'」前菜 / 主菜 / 配菜 / 甜点 各至少 1 道 ✓</div>';
+      } else {
+        out+='<div class="warn">「'+h(sal.名称)+'」缺少：'+h(missing.join('、'))+'（正餐每类需至少 1 道）</div>';
+      }
     }
   }
 
@@ -1554,14 +1622,20 @@ function renderTable(){
 function renderMenu(){
   const box=document.getElementById('view-menu');
   let out='<div class="filterbar">';
-  // 筛选：能做的→「可制作」；能上桌的→「可食用素材」（采集品可直接生吃，无需加工）
+  // 第一行：主筛选（单选）
   const opts=[['sort','按满足度排序'],['match','符合访客性相'],['canmake','可制作'],['raw','可食用素材']];
   opts.forEach(([k,v])=>{
     out+='<button class="fbt'+(state.filter===k?' on':'')+'" onclick="setFilter(\''+escAttr(k)+'\')">'+v+'</button>';
   });
+  // 第二行：分类筛选（多选，正餐必用）
+  out+='<span class="fs">分类</span>';
+  CATEGORIES.forEach(c=>{
+    out+='<button class="fbt fbt-cat'+(state.catFilter.has(c)?' on':'')+'" onclick="toggleCat(\''+escAttr(c)+'\')>'+c+'</button>';
+  });
+  // 第三行：性相筛选（多选）
   out+='<span class="fs">性相</span>';
   Object.keys(ASPECTS).forEach(a=>{
-    out+='<button class="fbt'+(state.filter==='asp:'+a?' on':'')+'" onclick="setFilter(\'asp:'+escAttr(a)+'\')">'+a+'</button>';
+    out+='<button class="fbt fbt-asp'+(state.aspFilter.has(a)?' on':'')+'" onclick="toggleAsp(\''+escAttr(a)+'\')>'+a+'</button>';
   });
   out+='</div>';
 
@@ -1707,6 +1781,8 @@ function exportState(){
     dishRecipe: state.dishRecipe || {}, // 每道菜的每次上桌所用做法
     filter: state.filter,
     drinkFilter: state.drinkFilter,
+    catFilter: [...state.catFilter],
+    aspFilter: [...state.aspFilter],
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
@@ -1744,6 +1820,8 @@ function importState(){
         state.drinkTable = data.drinkTable || {};
         state.filter = data.filter || 'sort';
         state.drinkFilter = data.drinkFilter || 'all';
+        state.catFilter = new Set(data.catFilter || []);
+        state.aspFilter = new Set(data.aspFilter || []);
         state.pool = data.pool || null;
         state.dishRecipe = data.dishRecipe || {};
         renderAll();
