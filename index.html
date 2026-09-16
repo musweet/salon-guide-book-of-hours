@@ -551,9 +551,7 @@ function isAlcohol(name){
 }
 function isAlcoBan(salon){
   const s = (SALONS||[]).find(x => x.名称 === salon);
-  if(!s) return false;
-  // 副餐（午前茶/下午茶）禁烈酒
-  return s.类型 === '副餐' || s.禁烈酒 === true;
+  return !!(s && s.禁烈酒);
 }
 function dish(n){
   const f=FOODS.find(x=>x.名称===n);
