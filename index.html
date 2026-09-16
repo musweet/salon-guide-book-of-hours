@@ -934,7 +934,9 @@ function cascadeRemove(){
     let excess=0;
     for(const k in used){
       if(isTool(k)) continue;
-      const avail = baseOf(k) + poolOf(k);
+      // avail = 库存 + pool + 本菜自身消耗
+      // pool 已包含本菜的消耗，需加回 used[k] 以还原"做菜前"的可用量
+      const avail = baseOf(k) + poolOf(k) + used[k];
       const over = used[k] - avail;
       if(over > excess) excess = over;
 
