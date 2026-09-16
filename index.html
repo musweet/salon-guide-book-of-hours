@@ -1642,12 +1642,12 @@ function renderMenu(){
   // 第二行：分类筛选（多选，正餐必用）
   out+='<span class="fs">分类</span>';
   CATEGORIES.forEach(c=>{
-    out+='<button class="fbt fbt-cat'+(state.catFilter.has(c)?' on':'')+'" onclick="toggleCat(\''+escAttr(c)+'\')>'+c+'</button>';
+    out+='<button class="fbt fbt-cat'+(state.catFilter.has(c)?' on':'')+'" onclick="toggleCat(\''+escAttr(c)+'\')">';out+=c;out+='</button>';
   });
   // 第三行：性相筛选（多选）
   out+='<span class="fs">性相</span>';
   Object.keys(ASPECTS).forEach(a=>{
-    out+='<button class="fbt fbt-asp'+(state.aspFilter.has(a)?' on':'')+'" onclick="toggleAsp(\''+escAttr(a)+'\')>'+a+'</button>';
+    out+='<button class="fbt fbt-asp'+(state.aspFilter.has(a)?' on':'')+'" onclick="toggleAsp(\''+escAttr(a)+'\')">';out+=a;out+='</button>';
   });
   out+='</div>';
 
