@@ -537,6 +537,7 @@ function bigOfDrinks(name){
 }
 function drinkAvailable(name){
   const containers = bigOfDrinks(name);
+  if(name==='涩果酒') console.log('[DEBUG] drinkAvailable(涩果酒): containers.length='+containers.length+', state.inv[涩果酒]='+(state.inv['涩果酒']||0)+', drinkTable[涩果酒]='+(state.drinkTable['涩果酒']||0));
   let total = 0;
   if(containers.length){
     // 容器饮品：从 pool 读分装库存，减去已上架
