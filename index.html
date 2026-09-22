@@ -1320,6 +1320,7 @@ function renderDrinks(){
     if(banned) out+='<span class="tag-alc" style="color:#c0392b;font-weight:700">⚠ 副餐禁用</span>';
     else if(isAlcohol(n)) out+='<span class="tag-alc">烈酒</span>';
     out+='<span class="step">库存 '+avail+' 杯</span>';
+    if(bigOfDrinks(n).length===0) out+='<button class="add" onclick="addStock(\''+escAttr(n)+'\')" title="快速登记库存 +1">+</button>';
     out+='<span class="tn">已上 ×'+served+'</span>';
     out+='<button class="cook" onclick="doServeDrink(\''+escAttr(n)+'\')"' + (avail>0?'':' disabled') +'>上桌</button>';
     out+='</div>';
