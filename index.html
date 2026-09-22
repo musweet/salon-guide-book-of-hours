@@ -537,7 +537,7 @@ function bigOfDrinks(name){
 }
 function drinkAvailable(name){
   const containers = bigOfDrinks(name);
-  if(name==='涩果酒') console.log('[DEBUG] drinkAvailable(涩果酒): containers.length='+containers.length+', state.inv[涩果酒]='+(state.inv['涩果酒']||0)+', drinkTable[涩果酒]='+(state.drinkTable['涩果酒']||0));
+
   let total = 0;
   if(containers.length){
     // 容器饮品：从 pool 读分装库存，减去已上架
@@ -1321,7 +1321,8 @@ function renderDrinks(){
     if(banned) out+='<span class="tag-alc" style="color:#c0392b;font-weight:700">⚠ 副餐禁用</span>';
     else if(isAlcohol(n)) out+='<span class="tag-alc">烈酒</span>';
     out+='<span class="step">库存 '+avail+' 杯</span>';
-    if(bigOfDrinks(n).length===0) out+='<button class="add" onclick="addStock(\''+escAttr(n)+'\')" title="快速登记库存 +1">+</button>';
+
+
     out+='<span class="tn">已上 ×'+served+'</span>';
     out+='<button class="cook" onclick="doServeDrink(\''+escAttr(n)+'\')"' + (avail>0?'':' disabled') +'>上桌</button>';
     out+='</div>';
