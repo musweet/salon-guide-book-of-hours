@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>司辰之书 · 沙龙点菜助手</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="application/json" id="data">__DATA__</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🍽</span>
+      <div class="titles">
+        <h1>司辰之书 · 沙龙点菜助手</h1>
+        <p>登记库存、邀请访客、点菜与饮品，一键校验宴会条件。</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="ghost" onclick="resetAll()">重置</button>
+      <button class="ghost" onclick="exportState()">导出配置</button>
+      <button class="ghost" onclick="importState()">导入配置</button>
+    </div>
+  </header>
+
+  <main class="panels">
+    <details class="panel" open>
+      <summary class="phead">① 宴会</summary>
+      <div class="pbody"><div id="salons"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">② 访客</summary>
+      <div class="pbody"><div id="visitors"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">③ 订货与库存登记</summary>
+      <div class="pbody"><div id="order"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">④ 仓库</summary>
+      <div class="pbody"><div id="inv"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑤ 餐桌</summary>
+      <div class="pbody"><div id="table"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑥ 菜谱</summary>
+      <div class="pbody"><div id="view-menu"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑦ 饮品上架</summary>
+      <div class="pbody"><div id="view-drinks"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑧ 教诲预估</summary>
+      <div class="pbody"><div id="teach"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑨ 速查</summary>
+      <div class="pbody"><div id="view-ref"></div></div>
+    </details>
+    <details class="panel">
+      <summary class="phead">⑩ 规则</summary>
+      <div class="pbody"><div id="notes"></div></div>
+    </details>
+  </main>
+</div>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

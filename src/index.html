@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>司辰之书 · 沙龙筹备助手</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="application/json" id="data">__DATA__</script>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>司辰之书 · 沙龙筹备助手</h1>
+    <div id="sub">先选宴会与访客 → 订货与库存 → 锁定仓库进入备餐做菜 → 看餐桌满足度与教诲预估</div>
+  </header>
+
+  <div id="phasebar"></div>
+
+  <details class="panel" open id="p-salon">
+    <summary class="phead"><span class="pn">①</span><b>宴会类型</b><span class="ps" id="sum1"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="salons"></div>
+  </details>
+
+  <details class="panel" open id="p-visitors">
+    <summary class="phead"><span class="pn">②</span><b>访客与村民</b><span class="ps" id="sum2"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="visitors"></div>
+  </details>
+
+  <details class="panel" open id="p-order">
+    <summary class="phead"><span class="pn">③</span><b>订货与登记库存</b><span class="ps" id="sum3"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="order"></div>
+  </details>
+
+  <details class="panel" open id="p-inv">
+    <summary class="phead"><span class="pn">④</span><b>仓库 / 备餐池</b><span class="ps" id="sum4"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="inv"></div>
+  </details>
+
+  <details class="panel" open id="p-table">
+    <summary class="phead"><span class="pn">⑤</span><b>餐桌</b><span class="ps" id="sum5"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="table"></div>
+  </details>
+
+  
+
+
+  <details class="panel" open id="p-menu">
+    <summary class="phead"><span class="pn">⑥</span><b>菜谱（做菜会自动扣备餐池）</b><span class="ps"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="view-menu"></div>
+  </details>
+
+  <details class="panel" open id="p-drinks">
+    <summary class="phead"><span class="pn">⑦</span><b>饮品上架</b><span class="ps"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="view-drinks"></div>
+  </details>
+  <details class="panel" open id="p-teach">
+    <summary class="phead"><span class="pn">⑧</span><b>教诲预估</b><span class="ps"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="teach"></div>
+  </details>
+
+  <details class="panel" open id="p-ref">
+    <summary class="phead"><span class="pn">⑨</span><b>速查：性相与宴会议程</b><span class="ps"></span><span class="chev">▾</span></summary>
+    <div class="pbody" id="view-ref"></div>
+  </details>
+
+  <details class="panel" open id="p-notes">
+    <summary class="phead"><span class="pn">⑩</span><b>规则说明与依据</b><span class="chev">▾</span></summary>
+    <div class="pbody" id="notes"></div>
+  </details>
+
+  <footer>数据来自boh.huijiwiki.com（合成表/DLC/沙龙/访客/订货单）+ 用户实测反馈 · 离线单文件，无外部请求</footer>
+</div>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

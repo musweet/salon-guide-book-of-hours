@@ -1,0 +1,1516 @@
+{
+ "容器": {
+  "pitcher.water.isle.h": {
+   "id": "pitcher.water.isle.h",
+   "name": "岛上井水（半罐）",
+   "准则": {
+    "心": 1,
+    "月": 1,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "岛上井水（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pitcher.water.isle": {
+   "id": "pitcher.water.isle",
+   "name": "岛上井水（罐装）",
+   "准则": {
+    "心": 1,
+    "月": 1,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "岛上井水（一杯）",
+   "后继": "岛上井水（半罐）",
+   "后继id": "pitcher.water.isle.h",
+   "比例": 2
+  },
+  "pitcher.water.numa.h": {
+   "id": "pitcher.water.numa.h",
+   "name": "雾吻之水（半罐）",
+   "准则": {
+    "心": 1,
+    "启": 2,
+    "月": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "雾吻之水（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pitcher.water.numa": {
+   "id": "pitcher.water.numa",
+   "name": "雾吻之水（罐装）",
+   "准则": {
+    "心": 1,
+    "启": 2,
+    "月": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "雾吻之水（一杯）",
+   "后继": "雾吻之水（半罐）",
+   "后继id": "pitcher.water.numa.h",
+   "比例": 2
+  },
+  "pot.cocoa.h": {
+   "id": "pot.cocoa.h",
+   "name": "T.R.N.有限公司可可饮料（半壶）",
+   "准则": {
+    "杯": 2,
+    "心": 1
+   },
+   "含酒精": false,
+   "杯": "T.R.N.有限公司可可饮料（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pot.cocoa": {
+   "id": "pot.cocoa",
+   "name": "T.R.N.有限公司可可饮料（一壶）",
+   "准则": {
+    "杯": 2,
+    "心": 1
+   },
+   "含酒精": false,
+   "杯": "T.R.N.有限公司可可饮料（一杯）",
+   "后继": "T.R.N.有限公司可可饮料（半壶）",
+   "后继id": "pot.cocoa.h",
+   "比例": 2
+  },
+  "pot.coffee.dawnlion.h": {
+   "id": "pot.coffee.dawnlion.h",
+   "name": "晨狮牌咖啡（半壶）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "鳞": 1
+   },
+   "含酒精": false,
+   "杯": "晨狮牌咖啡（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pot.coffee.dawnlion": {
+   "id": "pot.coffee.dawnlion",
+   "name": "晨狮牌咖啡（一壶）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "鳞": 1
+   },
+   "含酒精": false,
+   "杯": "晨狮牌咖啡（一杯）",
+   "后继": "晨狮牌咖啡（半壶）",
+   "后继id": "pot.coffee.dawnlion.h",
+   "比例": 2
+  },
+  "pot.coffee.eveningisles.h": {
+   "id": "pot.coffee.eveningisles.h",
+   "name": "薄暮群屿咖啡（半壶）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "引": 1
+   },
+   "含酒精": false,
+   "杯": "薄暮群屿咖啡（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pot.coffee.eveningisles": {
+   "id": "pot.coffee.eveningisles",
+   "name": "薄暮群屿咖啡（一壶）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "引": 1
+   },
+   "含酒精": false,
+   "杯": "薄暮群屿咖啡（一杯）",
+   "后继": "薄暮群屿咖啡（半壶）",
+   "后继id": "pot.coffee.eveningisles.h",
+   "比例": 2
+  },
+  "pot.tea.assam.h": {
+   "id": "pot.tea.assam.h",
+   "name": "C＆H公司夏摘阿萨姆茶（半壶）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 1
+   },
+   "含酒精": false,
+   "杯": "C＆H公司夏摘阿萨姆茶（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pot.tea.assam": {
+   "id": "pot.tea.assam",
+   "name": "C＆H公司夏摘阿萨姆茶（一壶）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 1
+   },
+   "含酒精": false,
+   "杯": "C＆H公司夏摘阿萨姆茶（一杯）",
+   "后继": "C＆H公司夏摘阿萨姆茶（半壶）",
+   "后继id": "pot.tea.assam.h",
+   "比例": 2
+  },
+  "pot.tea.lapsang.h": {
+   "id": "pot.tea.lapsang.h",
+   "name": "面纱女神正山小种（半壶）",
+   "准则": {
+    "铸": 2
+   },
+   "含酒精": false,
+   "杯": "面纱女神正山小种（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "pot.tea.lapsang": {
+   "id": "pot.tea.lapsang",
+   "name": "面纱女神正山小种（一壶）",
+   "准则": {
+    "铸": 2
+   },
+   "含酒精": false,
+   "杯": "面纱女神正山小种（一杯）",
+   "后继": "面纱女神正山小种（半壶）",
+   "后继id": "pot.tea.lapsang.h",
+   "比例": 2
+  },
+  "assam.sweetened.h": {
+   "id": "assam.sweetened.h",
+   "name": "浓甜阿萨姆茶（半壶）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "浓甜阿萨姆茶（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "assam.sweetened": {
+   "id": "assam.sweetened",
+   "name": "浓甜阿萨姆茶（一壶）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "浓甜阿萨姆茶（一杯）",
+   "后继": "浓甜阿萨姆茶（半壶）",
+   "后继id": "assam.sweetened.h",
+   "比例": 2
+  },
+  "bottle.armagnac": {
+   "id": "bottle.armagnac",
+   "name": "伊苏产雅文邑（一瓶）",
+   "准则": {
+    "杯": 1,
+    "月": 2,
+    "蜜": 1
+   },
+   "含酒精": true,
+   "杯": "伊苏产雅文邑（一杯）",
+   "后继": "伊苏产雅文邑（近满）",
+   "后继id": "bottle.armagnac.mf",
+   "比例": 3
+  },
+  "bottle.armagnac.me": {
+   "id": "bottle.armagnac.me",
+   "name": "伊苏产雅文邑（近空）",
+   "准则": {
+    "杯": 1,
+    "月": 2,
+    "蜜": 1
+   },
+   "含酒精": true,
+   "杯": "伊苏产雅文邑（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.armagnac.mf": {
+   "id": "bottle.armagnac.mf",
+   "name": "伊苏产雅文邑（近满）",
+   "准则": {
+    "杯": 1,
+    "月": 2,
+    "蜜": 1
+   },
+   "含酒精": true,
+   "杯": "伊苏产雅文邑（一杯）",
+   "后继": "伊苏产雅文邑（近空）",
+   "后继id": "bottle.armagnac.me",
+   "比例": 2
+  },
+  "bottle.dandelionwine": {
+   "id": "bottle.dandelionwine",
+   "name": "蒲公英酒（一瓶）",
+   "准则": {
+    "灯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "蒲公英酒（一杯）",
+   "后继": "蒲公英酒（近满）",
+   "后继id": "bottle.dandelionwine.mf",
+   "比例": 3
+  },
+  "bottle.dandelionwine.me": {
+   "id": "bottle.dandelionwine.me",
+   "name": "蒲公英酒（近空）",
+   "准则": {
+    "灯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "蒲公英酒（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.dandelionwine.mf": {
+   "id": "bottle.dandelionwine.mf",
+   "name": "蒲公英酒（近满）",
+   "准则": {
+    "灯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "蒲公英酒（一杯）",
+   "后继": "蒲公英酒（近空）",
+   "后继id": "bottle.dandelionwine.me",
+   "比例": 2
+  },
+  "bottle.jannings": {
+   "id": "bottle.jannings",
+   "name": "雅宁斯古堡产酒（一瓶）",
+   "准则": {
+    "刃": 2,
+    "心": 1,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "雅宁斯古堡产酒（一杯）",
+   "后继": "雅宁斯古堡产酒（近满）",
+   "后继id": "bottle.jannings.mf",
+   "比例": 3
+  },
+  "bottle.jannings.me": {
+   "id": "bottle.jannings.me",
+   "name": "雅宁斯古堡产酒（近空）",
+   "准则": {
+    "刃": 2,
+    "心": 1,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "雅宁斯古堡产酒（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.jannings.mf": {
+   "id": "bottle.jannings.mf",
+   "name": "雅宁斯古堡产酒（近满）",
+   "准则": {
+    "刃": 2,
+    "心": 1,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "雅宁斯古堡产酒（一杯）",
+   "后继": "雅宁斯古堡产酒（近空）",
+   "后继id": "bottle.jannings.me",
+   "比例": 2
+  },
+  "bottle.lambig": {
+   "id": "bottle.lambig",
+   "name": "布劳赛良德苹果酒（一瓶）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "布劳赛良德苹果酒（一杯）",
+   "后继": "布劳赛良德苹果酒（近满）",
+   "后继id": "bottle.lambig.mf",
+   "比例": 3
+  },
+  "bottle.lambig.me": {
+   "id": "bottle.lambig.me",
+   "name": "布劳赛良德苹果酒（近空）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "布劳赛良德苹果酒（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.lambig.mf": {
+   "id": "bottle.lambig.mf",
+   "name": "布劳赛良德苹果酒（近满）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "布劳赛良德苹果酒（一杯）",
+   "后继": "布劳赛良德苹果酒（近空）",
+   "后继id": "bottle.lambig.me",
+   "比例": 2
+  },
+  "bottle.raveline": {
+   "id": "bottle.raveline",
+   "name": "拉维林酒庄产酒（一瓶）",
+   "准则": {
+    "杯": 2,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "拉维林酒庄产酒（一杯）",
+   "后继": "拉维林酒庄产酒（近满）",
+   "后继id": "bottle.raveline.mf",
+   "比例": 3
+  },
+  "bottle.raveline.me": {
+   "id": "bottle.raveline.me",
+   "name": "拉维林酒庄产酒（近空）",
+   "准则": {
+    "杯": 2,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "拉维林酒庄产酒（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.raveline.mf": {
+   "id": "bottle.raveline.mf",
+   "name": "拉维林酒庄产酒（近满）",
+   "准则": {
+    "杯": 2,
+    "鳞": 1
+   },
+   "含酒精": true,
+   "杯": "拉维林酒庄产酒（一杯）",
+   "后继": "拉维林酒庄产酒（近空）",
+   "后继id": "bottle.raveline.me",
+   "比例": 2
+  },
+  "bottle.roscraggan": {
+   "id": "bottle.roscraggan",
+   "name": "罗斯克拉根威士忌（一瓶）",
+   "准则": {
+    "铸": 1,
+    "引": 2
+   },
+   "含酒精": true,
+   "杯": "罗斯克拉根威士忌（一杯）",
+   "后继": "罗斯克拉根威士忌（近满）",
+   "后继id": "bottle.roscraggan.mf",
+   "比例": 3
+  },
+  "bottle.roscraggan.me": {
+   "id": "bottle.roscraggan.me",
+   "name": "罗斯克拉根威士忌（近空）",
+   "准则": {
+    "铸": 1,
+    "引": 2
+   },
+   "含酒精": true,
+   "杯": "罗斯克拉根威士忌（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.roscraggan.mf": {
+   "id": "bottle.roscraggan.mf",
+   "name": "罗斯克拉根威士忌（近满）",
+   "准则": {
+    "铸": 1,
+    "引": 2
+   },
+   "含酒精": true,
+   "杯": "罗斯克拉根威士忌（一杯）",
+   "后继": "罗斯克拉根威士忌（近空）",
+   "后继id": "bottle.roscraggan.me",
+   "比例": 2
+  },
+  "bottle.sloegin": {
+   "id": "bottle.sloegin",
+   "name": "黑刺李杜松子酒（一瓶）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "黑刺李琴酒（一杯）",
+   "后继": "黑刺李琴酒（近满）",
+   "后继id": "bottle.sloegin.mf",
+   "比例": 3
+  },
+  "bottle.sloegin.me": {
+   "id": "bottle.sloegin.me",
+   "name": "黑刺李琴酒（近空）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "黑刺李琴酒（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.sloegin.mf": {
+   "id": "bottle.sloegin.mf",
+   "name": "黑刺李琴酒（近满）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true,
+   "杯": "黑刺李琴酒（一杯）",
+   "后继": "黑刺李琴酒（近空）",
+   "后继id": "bottle.sloegin.me",
+   "比例": 2
+  },
+  "bottle.strathcoyne": {
+   "id": "bottle.strathcoyne",
+   "name": "斯特拉思科因威士忌（一瓶）",
+   "准则": {
+    "蜜": 1,
+    "鳞": 2
+   },
+   "含酒精": true,
+   "杯": "斯特拉思科因威士忌（一杯）",
+   "后继": "斯特拉思科因威士忌（近满）",
+   "后继id": "bottle.strathcoyne.mf",
+   "比例": 3
+  },
+  "bottle.strathcoyne.me": {
+   "id": "bottle.strathcoyne.me",
+   "name": "斯特拉思科因威士忌（近空）",
+   "准则": {
+    "蜜": 1,
+    "鳞": 2
+   },
+   "含酒精": true,
+   "杯": "斯特拉思科因威士忌（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "bottle.strathcoyne.mf": {
+   "id": "bottle.strathcoyne.mf",
+   "name": "斯特拉思科因威士忌（近满）",
+   "准则": {
+    "蜜": 1,
+    "鳞": 2
+   },
+   "含酒精": true,
+   "杯": "斯特拉思科因威士忌（一杯）",
+   "后继": "斯特拉思科因威士忌（近空）",
+   "后继id": "bottle.strathcoyne.me",
+   "比例": 2
+  },
+  "tea.blue.crown.h": {
+   "id": "tea.blue.crown.h",
+   "name": "蓝冠花茶（半壶）",
+   "准则": {
+    "蜜": 1,
+    "冬": 2
+   },
+   "含酒精": false,
+   "杯": "蓝冠花茶（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "tea.blue.crown": {
+   "id": "tea.blue.crown",
+   "name": "蓝冠花茶（一壶）",
+   "准则": {
+    "蜜": 1,
+    "冬": 2
+   },
+   "含酒精": false,
+   "杯": "蓝冠花茶（一杯）",
+   "后继": "蓝冠花茶（半壶）",
+   "后继id": "tea.blue.crown.h",
+   "比例": 2
+  },
+  "tea.fragrant.chalice.h": {
+   "id": "tea.fragrant.chalice.h",
+   "name": "香盏花茶（半壶）",
+   "准则": {
+    "杯": 2,
+    "蜜": 1
+   },
+   "含酒精": false,
+   "杯": "香盏花茶（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "tea.fragrant.chalice": {
+   "id": "tea.fragrant.chalice",
+   "name": "香盏花茶（一壶）",
+   "准则": {
+    "杯": 2,
+    "蜜": 1
+   },
+   "含酒精": false,
+   "杯": "香盏花茶（一杯）",
+   "后继": "香盏花茶（半壶）",
+   "后继id": "tea.fragrant.chalice.h",
+   "比例": 2
+  },
+  "tea.honeyscar.h": {
+   "id": "tea.honeyscar.h",
+   "name": "蜜痂茉莉茶（半壶）",
+   "准则": {
+    "铸": 2,
+    "蜜": 1,
+    "引": 1
+   },
+   "含酒精": false,
+   "杯": "蜜痂茉莉茶（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "tea.honeyscar": {
+   "id": "tea.honeyscar",
+   "name": "蜜痂茉莉茶（一壶）",
+   "准则": {
+    "铸": 2,
+    "蜜": 1,
+    "引": 1
+   },
+   "含酒精": false,
+   "杯": "蜜痂茉莉茶（一杯）",
+   "后继": "蜜痂茉莉茶（半壶）",
+   "后继id": "tea.honeyscar.h",
+   "比例": 2
+  },
+  "lapsang.sweetened.h": {
+   "id": "lapsang.sweetened.h",
+   "name": "浓甜正山小种（半壶）",
+   "准则": {
+    "铸": 2,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "浓甜正山小种（一杯）",
+   "后继": "dregs",
+   "后继id": "dregs",
+   "比例": 1
+  },
+  "lapsang.sweetened": {
+   "id": "lapsang.sweetened",
+   "name": "浓甜正山小种（一壶）",
+   "准则": {
+    "铸": 2,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false,
+   "杯": "浓甜正山小种（一杯）",
+   "后继": "浓甜正山小种（半壶）",
+   "后继id": "lapsang.sweetened.h",
+   "比例": 2
+  }
+ },
+ "杯子": {
+  "pottery.scrumpy": {
+   "id": "pottery.scrumpy",
+   "name": "涩果酒（整瓶）",
+   "准则": {
+    "杯": 2,
+    "蜜": 2
+   },
+   "含酒精": true
+  },
+  "rubywise.ruin": {
+   "id": "rubywise.ruin",
+   "name": "沉沦赤慧",
+   "准则": {
+    "杯": 4,
+    "心": 2,
+    "蛾": 2,
+    "蜜": 2,
+    "引": 2
+   },
+   "含酒精": true
+  },
+  "sacrament.ascite": {
+   "id": "sacrament.ascite",
+   "name": "斫解石圣餐",
+   "准则": {
+    "启": 6
+   },
+   "含酒精": true
+  },
+  "sacrament.calicite": {
+   "id": "sacrament.calicite",
+   "name": "圣觚石圣餐",
+   "准则": {
+    "杯": 6
+   },
+   "含酒精": true
+  },
+  "sacrament.chalicite": {
+   "id": "sacrament.chalicite",
+   "name": "圣觚石圣餐[典藏版]",
+   "准则": {
+    "杯": 6,
+    "心": 6
+   },
+   "含酒精": true
+  },
+  "sacrament.malachite": {
+   "id": "sacrament.malachite",
+   "name": "孔雀石圣餐",
+   "准则": {
+    "蜜": 6
+   },
+   "含酒精": true
+  },
+  "serpentmilk": {
+   "id": "serpentmilk",
+   "name": "蛇乳",
+   "准则": {
+    "刃": 6,
+    "启": 2,
+    "鳞": 3
+   },
+   "含酒精": true
+  },
+  "skinshuck.mead": {
+   "id": "skinshuck.mead",
+   "name": "剥皮蜜酒",
+   "准则": {
+    "心": 2,
+    "蛾": 6,
+    "蜜": 2,
+    "鳞": 2
+   },
+   "含酒精": true
+  },
+  "alembic.sly": {
+   "id": "alembic.sly",
+   "name": "狡黠蒸馏釜",
+   "准则": {
+    "杯": 3,
+    "心": 3
+   },
+   "含酒精": true
+  },
+  "assam.sweetened.cup": {
+   "id": "assam.sweetened.cup",
+   "name": "浓甜阿萨姆茶（一杯）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false
+  },
+  "bottle.blackdove": {
+   "id": "bottle.blackdove",
+   "name": "黑鸽酒",
+   "准则": {
+    "杯": 4,
+    "心": 4,
+    "月": 4,
+    "蜜": 4
+   },
+   "含酒精": true
+  },
+  "chalice.lambig": {
+   "id": "chalice.lambig",
+   "name": "布劳赛良德苹果酒（一杯）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true
+  },
+  "cordial.elderflower": {
+   "id": "cordial.elderflower",
+   "name": "接骨木利口酒",
+   "准则": {
+    "心": 1,
+    "蜜": 2
+   },
+   "含酒精": false
+  },
+  "cup.cocoa": {
+   "id": "cup.cocoa",
+   "name": "T.R.N.有限公司可可饮料（一杯）",
+   "准则": {
+    "杯": 2,
+    "心": 1
+   },
+   "含酒精": false
+  },
+  "cup.coffee.dawnlion": {
+   "id": "cup.coffee.dawnlion",
+   "name": "晨狮牌咖啡（一杯）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "鳞": 1
+   },
+   "含酒精": false
+  },
+  "cup.coffee.eveningisles": {
+   "id": "cup.coffee.eveningisles",
+   "name": "薄暮群屿咖啡（一杯）",
+   "准则": {
+    "铸": 1,
+    "灯": 2,
+    "引": 1
+   },
+   "含酒精": false
+  },
+  "cup.tea.assam": {
+   "id": "cup.tea.assam",
+   "name": "C＆H公司夏摘阿萨姆茶（一杯）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 1
+   },
+   "含酒精": false
+  },
+  "cup.tea.lapsang": {
+   "id": "cup.tea.lapsang",
+   "name": "面纱女神正山小种（一杯）",
+   "准则": {
+    "铸": 2
+   },
+   "含酒精": false
+  },
+  "eigengrau": {
+   "id": "eigengrau",
+   "name": "本征灰酒",
+   "准则": {
+    "月": 1,
+    "冬": 1
+   },
+   "含酒精": true
+  },
+  "tea.blue.crown.cup": {
+   "id": "tea.blue.crown.cup",
+   "name": "蓝冠花茶（一杯）",
+   "准则": {
+    "蜜": 1,
+    "冬": 2
+   },
+   "含酒精": false
+  },
+  "tea.fragrant.chalice.cup": {
+   "id": "tea.fragrant.chalice.cup",
+   "name": "香盏花茶（一杯）",
+   "准则": {
+    "杯": 2,
+    "蜜": 1
+   },
+   "含酒精": false
+  },
+  "tea.honeyscar.cup": {
+   "id": "tea.honeyscar.cup",
+   "name": "蜜痂茉莉茶（一杯）",
+   "准则": {
+    "铸": 2,
+    "蜜": 1,
+    "引": 1
+   },
+   "含酒精": false
+  },
+  "witching.tisane": {
+   "id": "witching.tisane",
+   "name": "巫魅药茶",
+   "准则": {
+    "杯": 2,
+    "心": 1
+   },
+   "含酒精": false
+  },
+  "glass.armagnac": {
+   "id": "glass.armagnac",
+   "name": "伊苏产雅文邑（一杯）",
+   "准则": {
+    "杯": 1,
+    "月": 2,
+    "蜜": 1
+   },
+   "含酒精": true
+  },
+  "glass.dandelionwine": {
+   "id": "glass.dandelionwine",
+   "name": "蒲公英酒（一杯）",
+   "准则": {
+    "灯": 1,
+    "蜜": 2
+   },
+   "含酒精": true
+  },
+  "glass.jannings": {
+   "id": "glass.jannings",
+   "name": "雅宁斯古堡产酒（一杯）",
+   "准则": {
+    "刃": 2,
+    "心": 1,
+    "鳞": 1
+   },
+   "含酒精": true
+  },
+  "glass.raveline": {
+   "id": "glass.raveline",
+   "name": "拉维林酒庄产酒（一杯）",
+   "准则": {
+    "杯": 2,
+    "鳞": 1
+   },
+   "含酒精": true
+  },
+  "glass.roscraggan": {
+   "id": "glass.roscraggan",
+   "name": "罗斯克拉根威士忌（一杯）",
+   "准则": {
+    "铸": 1,
+    "引": 2
+   },
+   "含酒精": true
+  },
+  "glass.sloegin": {
+   "id": "glass.sloegin",
+   "name": "黑刺李琴酒（一杯）",
+   "准则": {
+    "杯": 1,
+    "蜜": 2
+   },
+   "含酒精": true
+  },
+  "glass.strathcoyne": {
+   "id": "glass.strathcoyne",
+   "name": "斯特拉思科因威士忌（一杯）",
+   "准则": {
+    "蜜": 1,
+    "鳞": 2
+   },
+   "含酒精": true
+  },
+  "glass.water.isle": {
+   "id": "glass.water.isle",
+   "name": "岛上井水（一杯）",
+   "准则": {
+    "心": 1,
+    "月": 1,
+    "冬": 1
+   },
+   "含酒精": false
+  },
+  "glass.water.numa": {
+   "id": "glass.water.numa",
+   "name": "雾吻之水（一杯）",
+   "准则": {
+    "心": 1,
+    "启": 2,
+    "月": 2,
+    "冬": 1
+   },
+   "含酒精": false
+  },
+  "lapsang.sweetened.cup": {
+   "id": "lapsang.sweetened.cup",
+   "name": "浓甜正山小种（一杯）",
+   "准则": {
+    "铸": 2,
+    "灯": 2,
+    "蜜": 2,
+    "冬": 1
+   },
+   "含酒精": false
+  },
+  "leathy": {
+   "id": "leathy",
+   "name": "遗忘之水",
+   "准则": {
+    "杯": 2,
+    "蛾": 4,
+    "蜜": 2,
+    "鳞": 2
+   },
+   "含酒精": true
+  },
+  "liquid.solomon": {
+   "id": "liquid.solomon",
+   "name": "所罗门制剂",
+   "准则": {
+    "月": 1,
+    "蛾": 1,
+    "冬": 4
+   },
+   "含酒精": false
+  },
+  "liquid.thirza": {
+   "id": "liquid.thirza",
+   "name": "蒂尔扎利口酒",
+   "准则": {
+    "蛾": 2,
+    "蜜": 2
+   },
+   "含酒精": true
+  },
+  "milk": {
+   "id": "milk",
+   "name": "奶",
+   "准则": {
+    "杯": 1,
+    "心": 1,
+    "鳞": 1,
+    "冬": 1
+   },
+   "含酒精": false
+  }
+ },
+ "可冲泡": {
+  "packet.cocoa": {
+   "id": "packet.cocoa",
+   "name": "T.R.N.有限公司可可饮料（包装）",
+   "准则": {
+    "杯": 2,
+    "心": 1
+   },
+   "冲泡产物id": "pot.cocoa",
+   "冲泡产物": "T.R.N.有限公司可可饮料（一壶）",
+   "含酒精": false
+  },
+  "packet.coffee.dawnlion": {
+   "id": "packet.coffee.dawnlion",
+   "name": "晨狮牌咖啡（包装）",
+   "准则": {
+    "铸": 1,
+    "灯": 1,
+    "鳞": 1
+   },
+   "冲泡产物id": "pot.coffee.dawnlion",
+   "冲泡产物": "晨狮牌咖啡（一壶）",
+   "含酒精": false
+  },
+  "packet.coffee.eveningisles": {
+   "id": "packet.coffee.eveningisles",
+   "name": "薄暮群屿咖啡（包装）",
+   "准则": {
+    "铸": 1,
+    "灯": 1,
+    "引": 1
+   },
+   "冲泡产物id": "pot.coffee.eveningisles",
+   "冲泡产物": "薄暮群屿咖啡（一壶）",
+   "含酒精": false
+  },
+  "packet.tea.assam": {
+   "id": "packet.tea.assam",
+   "name": "C＆H公司夏摘阿萨姆茶（包装）",
+   "准则": {
+    "刃": 1,
+    "启": 1,
+    "灯": 1
+   },
+   "冲泡产物id": "pot.tea.assam",
+   "冲泡产物": "C＆H公司夏摘阿萨姆茶（一壶）",
+   "含酒精": false
+  },
+  "packet.tea.lapsang": {
+   "id": "packet.tea.lapsang",
+   "name": "面纱女神正山小种（包装）",
+   "准则": {
+    "铸": 1
+   },
+   "冲泡产物id": "pot.tea.lapsang",
+   "冲泡产物": "面纱女神正山小种（一壶）",
+   "含酒精": false
+  }
+ },
+ "类别": [
+  {
+   "title": "饮品 · 特殊",
+   "names": [
+    {
+     "id": "skinshuck.mead",
+     "name": "剥皮蜜酒",
+     "准则": {
+      "心": 2,
+      "蛾": 6,
+      "蜜": 2,
+      "鳞": 2
+     },
+     "含酒精": true
+    },
+    {
+     "id": "eigengrau",
+     "name": "本征灰酒",
+     "准则": {
+      "月": 1,
+      "冬": 1
+     },
+     "含酒精": true
+    },
+    {
+     "id": "rubywise.ruin",
+     "name": "沉沦赤慧",
+     "准则": {
+      "杯": 4,
+      "心": 2,
+      "蛾": 2,
+      "蜜": 2,
+      "引": 2
+     },
+     "含酒精": true
+    },
+    {
+     "id": "liquid.thirza",
+     "name": "蒂尔扎利口酒",
+     "准则": {
+      "蛾": 2,
+      "蜜": 2
+     },
+     "含酒精": true
+    },
+    {
+     "id": "bottle.blackdove",
+     "name": "黑鸽酒",
+     "准则": {
+      "杯": 4,
+      "心": 4,
+      "月": 4,
+      "蜜": 4
+     },
+     "含酒精": true
+    },
+    {
+     "id": "cordial.elderflower",
+     "name": "接骨木利口酒",
+     "准则": {
+      "心": 1,
+      "蜜": 2
+     },
+     "含酒精": false
+    },
+    {
+     "id": "sacrament.calicite",
+     "name": "圣觚石圣餐",
+     "准则": {
+      "杯": 6
+     },
+     "含酒精": true
+    },
+    {
+     "id": "milk",
+     "name": "奶",
+     "准则": {
+      "杯": 1,
+      "心": 1,
+      "鳞": 1,
+      "冬": 1
+     },
+     "含酒精": false
+    },
+    {
+     "id": "serpentmilk",
+     "name": "蛇乳",
+     "准则": {
+      "刃": 6,
+      "启": 2,
+      "鳞": 3
+     },
+     "含酒精": true
+    },
+    {
+     "id": "liquid.solomon",
+     "name": "所罗门制剂",
+     "准则": {
+      "月": 1,
+      "蛾": 1,
+      "冬": 4
+     },
+     "含酒精": false
+    },
+    {
+     "id": "alembic.sly",
+     "name": "狡黠蒸馏釜",
+     "准则": {
+      "杯": 3,
+      "心": 3
+     },
+     "含酒精": true
+    }
+   ]
+  },
+  {
+   "title": "饮品 · 茶",
+   "names": [
+    {
+     "id": "pot.tea.assam",
+     "name": "C＆H公司夏摘阿萨姆茶（一壶）",
+     "准则": {
+      "刃": 1,
+      "启": 1,
+      "灯": 1
+     },
+     "含酒精": false,
+     "杯": "C＆H公司夏摘阿萨姆茶（一杯）",
+     "后继": "C＆H公司夏摘阿萨姆茶（半壶）",
+     "后继id": "pot.tea.assam.h",
+     "比例": 2
+    },
+    {
+     "id": "pot.cocoa",
+     "name": "T.R.N.有限公司可可饮料（一壶）",
+     "准则": {
+      "杯": 2,
+      "心": 1
+     },
+     "含酒精": false,
+     "杯": "T.R.N.有限公司可可饮料（一杯）",
+     "后继": "T.R.N.有限公司可可饮料（半壶）",
+     "后继id": "pot.cocoa.h",
+     "比例": 2
+    },
+    {
+     "id": "tea.blue.crown",
+     "name": "蓝冠花茶（一壶）",
+     "准则": {
+      "蜜": 1,
+      "冬": 2
+     },
+     "含酒精": false,
+     "杯": "蓝冠花茶（一杯）",
+     "后继": "蓝冠花茶（半壶）",
+     "后继id": "tea.blue.crown.h",
+     "比例": 2
+    },
+    {
+     "id": "tea.honeyscar",
+     "name": "蜜痂茉莉茶（一壶）",
+     "准则": {
+      "铸": 2,
+      "蜜": 1,
+      "引": 1
+     },
+     "含酒精": false,
+     "杯": "蜜痂茉莉茶（一杯）",
+     "后继": "蜜痂茉莉茶（半壶）",
+     "后继id": "tea.honeyscar.h",
+     "比例": 2
+    },
+    {
+     "id": "pot.tea.lapsang",
+     "name": "面纱女神正山小种（一壶）",
+     "准则": {
+      "铸": 2
+     },
+     "含酒精": false,
+     "杯": "面纱女神正山小种（一杯）",
+     "后继": "面纱女神正山小种（半壶）",
+     "后继id": "pot.tea.lapsang.h",
+     "比例": 2
+    },
+    {
+     "id": "assam.sweetened",
+     "name": "浓甜阿萨姆茶（一壶）",
+     "准则": {
+      "刃": 1,
+      "启": 1,
+      "灯": 2,
+      "蜜": 2,
+      "冬": 1
+     },
+     "含酒精": false,
+     "杯": "浓甜阿萨姆茶（一杯）",
+     "后继": "浓甜阿萨姆茶（半壶）",
+     "后继id": "assam.sweetened.h",
+     "比例": 2
+    },
+    {
+     "id": "lapsang.sweetened",
+     "name": "浓甜正山小种（一壶）",
+     "准则": {
+      "铸": 2,
+      "灯": 2,
+      "蜜": 2,
+      "冬": 1
+     },
+     "含酒精": false,
+     "杯": "浓甜正山小种（一杯）",
+     "后继": "浓甜正山小种（半壶）",
+     "后继id": "lapsang.sweetened.h",
+     "比例": 2
+    },
+    {
+     "id": "tea.fragrant.chalice",
+     "name": "香盏花茶（一壶）",
+     "准则": {
+      "杯": 2,
+      "蜜": 1
+     },
+     "含酒精": false,
+     "杯": "香盏花茶（一杯）",
+     "后继": "香盏花茶（半壶）",
+     "后继id": "tea.fragrant.chalice.h",
+     "比例": 2
+    }
+   ]
+  },
+  {
+   "title": "饮品 · 咖啡",
+   "names": [
+    {
+     "id": "pot.coffee.eveningisles",
+     "name": "薄暮群屿咖啡（一壶）",
+     "准则": {
+      "铸": 1,
+      "灯": 2,
+      "引": 1
+     },
+     "含酒精": false,
+     "杯": "薄暮群屿咖啡（一杯）",
+     "后继": "薄暮群屿咖啡（半壶）",
+     "后继id": "pot.coffee.eveningisles.h",
+     "比例": 2
+    },
+    {
+     "id": "pot.coffee.dawnlion",
+     "name": "晨狮牌咖啡（一壶）",
+     "准则": {
+      "铸": 1,
+      "灯": 2,
+      "鳞": 1
+     },
+     "含酒精": false,
+     "杯": "晨狮牌咖啡（一杯）",
+     "后继": "晨狮牌咖啡（半壶）",
+     "后继id": "pot.coffee.dawnlion.h",
+     "比例": 2
+    }
+   ]
+  },
+  {
+   "title": "饮品 · 井水",
+   "names": [
+    {
+     "id": "pitcher.water.isle",
+     "name": "岛上井水（罐装）",
+     "准则": {
+      "心": 1,
+      "月": 1,
+      "冬": 1
+     },
+     "含酒精": false,
+     "杯": "岛上井水（一杯）",
+     "后继": "岛上井水（半罐）",
+     "后继id": "pitcher.water.isle.h",
+     "比例": 2
+    },
+    {
+     "id": "pitcher.water.numa",
+     "name": "雾吻之水（罐装）",
+     "准则": {
+      "心": 1,
+      "启": 2,
+      "月": 2,
+      "冬": 1
+     },
+     "含酒精": false,
+     "杯": "雾吻之水（一杯）",
+     "后继": "雾吻之水（半罐）",
+     "后继id": "pitcher.water.numa.h",
+     "比例": 2
+    }
+   ]
+  },
+  {
+   "title": "饮品 · 酒",
+   "names": [
+    {
+     "id": "bottle.lambig",
+     "name": "布劳赛良德苹果酒（一瓶）",
+     "准则": {
+      "杯": 1,
+      "蜜": 2
+     },
+     "含酒精": true,
+     "杯": "布劳赛良德苹果酒（一杯）",
+     "后继": "布劳赛良德苹果酒（近满）",
+     "后继id": "bottle.lambig.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.sloegin",
+     "name": "黑刺李杜松子酒（一瓶）",
+     "准则": {
+      "杯": 1,
+      "蜜": 2
+     },
+     "含酒精": true,
+     "杯": "黑刺李琴酒（一杯）",
+     "后继": "黑刺李琴酒（近满）",
+     "后继id": "bottle.sloegin.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.raveline",
+     "name": "拉维林酒庄产酒（一瓶）",
+     "准则": {
+      "杯": 2,
+      "鳞": 1
+     },
+     "含酒精": true,
+     "杯": "拉维林酒庄产酒（一杯）",
+     "后继": "拉维林酒庄产酒（近满）",
+     "后继id": "bottle.raveline.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.roscraggan",
+     "name": "罗斯克拉根威士忌（一瓶）",
+     "准则": {
+      "铸": 1,
+      "引": 2
+     },
+     "含酒精": true,
+     "杯": "罗斯克拉根威士忌（一杯）",
+     "后继": "罗斯克拉根威士忌（近满）",
+     "后继id": "bottle.roscraggan.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.dandelionwine",
+     "name": "蒲公英酒（一瓶）",
+     "准则": {
+      "灯": 1,
+      "蜜": 2
+     },
+     "含酒精": true,
+     "杯": "蒲公英酒（一杯）",
+     "后继": "蒲公英酒（近满）",
+     "后继id": "bottle.dandelionwine.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.strathcoyne",
+     "name": "斯特拉思科因威士忌（一瓶）",
+     "准则": {
+      "蜜": 1,
+      "鳞": 2
+     },
+     "含酒精": true,
+     "杯": "斯特拉思科因威士忌（一杯）",
+     "后继": "斯特拉思科因威士忌（近满）",
+     "后继id": "bottle.strathcoyne.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.jannings",
+     "name": "雅宁斯古堡产酒（一瓶）",
+     "准则": {
+      "刃": 2,
+      "心": 1,
+      "鳞": 1
+     },
+     "含酒精": true,
+     "杯": "雅宁斯古堡产酒（一杯）",
+     "后继": "雅宁斯古堡产酒（近满）",
+     "后继id": "bottle.jannings.mf",
+     "比例": 3
+    },
+    {
+     "id": "bottle.armagnac",
+     "name": "伊苏产雅文邑（一瓶）",
+     "准则": {
+      "杯": 1,
+      "月": 2,
+      "蜜": 1
+     },
+     "含酒精": true,
+     "杯": "伊苏产雅文邑（一杯）",
+     "后继": "伊苏产雅文邑（近满）",
+     "后继id": "bottle.armagnac.mf",
+     "比例": 3
+    }
+   ]
+  },
+  {
+   "title": "饮品 · 涩果酒",
+   "names": [
+    {
+     "id": "pottery.scrumpy",
+     "name": "涩果酒（整瓶）",
+     "准则": {
+      "杯": 2,
+      "蜜": 2
+     },
+     "含酒精": true
+    }
+   ]
+  }
+ ],
+ "已跳过": {
+  "pottery.scrumpy.h": "涩果酒（半瓶）",
+  "cup.scrumpy": "涩果酒（一杯）"
+ },
+ "规则": {
+  "来源": "维基 Data namespace（87 张 _beverage 卡牌 + 8 张 brewable 卡牌）",
+  "容器判定": "aspects.distributable === 1",
+  "杯子判定": "inherits 为 _beverage 且无 distributable",
+  "分装到杯": "xtriggers.dist 中 morpheffect==='spawn' 的条目（维基官方分装目标）",
+  "后继容器": "xtriggers.dist 中 morpheffect==='transform' 的条目（分装后容器变成什么）",
+  "含酒精": "aspects.intoxicating === 1（维基字段，替代手填「含酒精」）",
+  "性相": "aspects 中的性相 key，按 extract_food.py 的中文映射转换",
+  "比例": "维基无此数据，按项目约定从 ID 后缀推导：bottle.*=3；*.h=1；*.mf=2；*.me=1；其余整壶=2",
+  "可冲泡原料": "aspects.brewable === 1 且 xtriggers.dist[0].id 指向 _beverage 容器",
+  "冲泡产物": "xtriggers.dist 中 morpheffect=='spawn' 的条目（包装→整壶）",
+  "已排除的 brewable": "冲泡产物不是饮品的（鸡蛋类，eggs → 蛋液）不收录",
+  "类别分组": "维基无此字段，保留手填 CATEGORIES；name 用维基中文名",
+  "已跳过": "SKIP 列表里的卡牌游戏未实装，不写入",
+  "全角点号": "维基字段用全角 U+FF0E（．），匹配时用全角"
+ }
+}

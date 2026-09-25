@@ -1,0 +1,20 @@
+{
+  "name": "salon-guide-book-of-hours",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Engineering split of the single-file Book of Hours salon planning tool.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node tests/test_html.js",
+    "test:drinks": "node tests/test_drinks.js",
+    "test:all": "node tests/test_html.js && node tests/test_drinks.js",
+    "dev": "node scripts/build.js",
+    "check": "node tools/check-css-vars.js src/styles.css",
+    "verify:data": "node tools/verify-data.js",
+    "lint": "node tools/check-css-vars.js src/styles.css && node tools/verify-data.js",
+    "archive:dead": "node tools/archive-dead.js",
+    "dedupe:css": "node tools/dedupe-css.js src/styles.css",
+    "gate": "node tools/gate.js",
+    "verify": "npm run lint && npm run test:all && npm run gate"
+  }
+}
