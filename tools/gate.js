@@ -108,11 +108,16 @@ const KNOWN_DIFF = {
   dish: '分类改为读维基 wiki_tags 的 分类列表 字段，移除 RAW_EATABLE_CATS',
   allKnownItems: 'DRINK_BIG 现在是单一数组，DRINK_SMALL 改为 DRINK_SMALL_ARR',
   canServe: 'RAW_EATABLE 由 Array 改 Set，.includes 改 .has',
-  doEat: 'RAW_EATABLE 由 Array 改 Set，.includes 改 .has',
+  doEat: 'RAW_EATABLE 由 Array 改 Set，.includes 改 .has；双重身份物品（奶）上架时两栏同步 +1 + pool 扣减',
   stockItems: '饮品分类登记改用维基 wiki_tags.饮品.类别（DRINK_GROUPDATA）',
   aspForDrink: '杯子性相改为读维基杯子准则（CUP_ASP），移除 CAT.INGREDIENT_ASPECTS',
   renderDrinks: '容器列表改为 DRINK_BIG 单数组；allContainers 不再展开四张表',
   renderMenu: 'RAW_EATABLE 改 Set 后需 Array.from 才能 filter/map',
+
+  // ---- 2026-09-25 奶的双重身份（既是食物又能饮品）----
+  doUncook: '双重身份物品（奶）下架时两栏同步 -n + 库存返还，跳过 dishRecipe/副产物/级联逻辑',
+  doServeDrink: '双重身份物品（奶）上架时两栏同步 +n + pool 扣减',
+  doUnserveDrink: '双重身份物品（奶）下架时两栏同步 -n + 库存返还',
 };
 
 const NEW_FN = [

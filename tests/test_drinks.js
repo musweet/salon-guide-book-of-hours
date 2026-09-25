@@ -38,16 +38,16 @@ try {
     // 1. 维基饮品模型已加载
     ok('wiki_tags.饮品 存在', typeof DATA.wiki_tags.饮品 === 'object');
     ok('容器 48 个', Object.keys(DATA.wiki_tags.饮品.容器).length === 48);
-    ok('杯子 37 个', Object.keys(DATA.wiki_tags.饮品.杯子).length === 37);
+    ok('杯子 36 个', Object.keys(DATA.wiki_tags.饮品.杯子).length === 36);
     ok('类别 6 组', DATA.wiki_tags.饮品.类别.length === 6);
 
     // 2. DRINK_BIG 包含维基全部 48 个容器
     ok('DRINK_BIG 48 个容器', DRINK_BIG.length === 48);
     // 3. DRINK_SMALL_ARR 含杯子名
     ok('DRINK_SMALL_ARR 含 伊苏产雅文邑（一杯）', DRINK_SMALL_ARR.includes('伊苏产雅文邑（一杯）'));
-    ok('DRINK_SMALL_ARR 含 圣觪石圣餐', DRINK_SMALL_ARR.includes('圣\u89ea石圣餐'));
+    ok('DRINK_SMALL_ARR 含 圣觪石圣餐', DRINK_SMALL_ARR.includes('圣\u89da石圣餐'));
     ok('DRINK_SMALL_ARR 含 淘气蒸馏釜', DRINK_SMALL_ARR.includes('淘气蒸馏釜'));
-    ok('DRINK_BIG 含 黑刺李琴酒（一瓶） 是容器不是杯', DRINK_BIG.some(b=>b.名称==='黑刺李琴酒（一瓶）'));
+    ok('DRINK_BIG 含 黑刺李杜松子酒（一瓶） 是容器不是杯', DRINK_BIG.some(b=>b.名称==='黑刺李杜松子酒（一瓶）'));
 
     // 4. 分装链（DRINK_BASE）：杯名 -> 所有能产出该杯的容器
     const b1 = bigOfDrinks('伊苏产雅文邑（一杯）');
@@ -68,9 +68,9 @@ try {
     ok('岛上井水 不含酒精', isAlcohol('岛上井水（一杯）') === false);
 
     // 6. 性相（从维基杯子准则）
-    const a1 = aspForDrink('圣\u89ea石圣餐');
-    ok('圣觪石圣餐 有准则', a1 && Object.keys(a1).length > 0);
-    ok('圣觪石圣餐 杯=6', a1['杯'] === 6);
+    const a1 = aspForDrink('圣\u89da石圣餐');
+    ok('圣\u89da石圣餐 有准则', a1 && Object.keys(a1).length > 0);
+    ok('圣\u89da石圣餐 杯=6', a1['杯'] === 6);
     const a2 = aspForDrink('伊苏产雅文邑（一杯）');
     ok('雅文邑一杯 有准则', a2 && Object.keys(a2).length > 0);
 

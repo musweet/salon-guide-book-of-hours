@@ -691,15 +691,6 @@
    },
    "含酒精": true
   },
-  "sacrament.chalicite": {
-   "id": "sacrament.chalicite",
-   "name": "圣觚石圣餐[典藏版]",
-   "准则": {
-    "杯": 6,
-    "心": 6
-   },
-   "含酒精": true
-  },
   "sacrament.malachite": {
    "id": "sacrament.malachite",
    "name": "孔雀石圣餐",
@@ -1182,6 +1173,42 @@
       "心": 3
      },
      "含酒精": true
+    },
+    {
+     "id": "witching.tisane",
+     "name": "巫魅药茶",
+     "准则": {
+      "杯": 2,
+      "心": 1
+     },
+     "含酒精": false
+    },
+    {
+     "id": "leathy",
+     "name": "遗忘之水",
+     "准则": {
+      "杯": 2,
+      "蛾": 4,
+      "蜜": 2,
+      "鳞": 2
+     },
+     "含酒精": true
+    },
+    {
+     "id": "sacrament.malachite",
+     "name": "孔雀石圣餐",
+     "准则": {
+      "蜜": 6
+     },
+     "含酒精": true
+    },
+    {
+     "id": "sacrament.ascite",
+     "name": "斫解石圣餐",
+     "准则": {
+      "启": 6
+     },
+     "含酒精": true
     }
    ]
   },
@@ -1495,6 +1522,7 @@
  ],
  "已跳过": {
   "pottery.scrumpy.h": "涩果酒（半瓶）",
+  "sacrament.chalicite": "圣觚石圣餐[典藏版]",
   "cup.scrumpy": "涩果酒（一杯）"
  },
  "规则": {

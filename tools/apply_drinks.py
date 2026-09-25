@@ -18,6 +18,16 @@ NAME_FIX = {
     '黑刺李琴酒（一瓶）': '黑刺李杜松子酒（一瓶）',  # 维基已改名
 }
 
+# 图片键别名（维基名 → images 字典里已有的旧名）
+# 原因：wiki 驱动的类别表用维基中文名"（一壶）"，
+# 但项目早期生成的图片键是"（壶装）"。加别名让 thumb() 能匹配。
+# 2026-09-25 用户反馈：三个"（一壶）"饮品在③订货面板没有图片。
+IMAGE_ALIASES = [
+    ('T.R.N.有限公司可可饮料（壶装）', 'T.R.N.有限公司可可饮料（一壶）'),
+    ('薄暮群屿咖啡（壶装）', '薄暮群屿咖啡（一壶）'),
+    ('晨狮牌咖啡（壶装）', '晨狮牌咖啡（一壶）'),
+]
+
 
 def main():
     m = json.load(open(MODEL, encoding='utf-8'))
@@ -32,6 +42,16 @@ def main():
         '已跳过': m['已跳过'],
         '规则': m['规则'],
     }
+
+    # 图片别名持久化（幂等：目标键已存在则跳过）
+    imgs = d.setdefault('images', {})
+    added = 0
+    for src, dst in IMAGE_ALIASES:
+        if src in imgs and dst not in imgs:
+            imgs[dst] = imgs[src]
+            added += 1
+    if added:
+        print('图片别名 +{} 条'.format(added))
 
     out = SRC + '.tmp'
     json.dump(d, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

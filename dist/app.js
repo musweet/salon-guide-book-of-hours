@@ -17,16 +17,23 @@ const CAT = DATA.catalog, FOODS_MAP = DATA.foods || {};
 // 容器判定 = aspects.distributable；杯子 = _beverage 且无 distributable
 // 分装链（容器.杯 / 容器.后继 / 比例）来自 xtriggers.dist + ID 后缀推导
 const WT_DRINK = DATA.wiki_tags && DATA.wiki_tags.饮品;
+// 双重身份物品：既是食物（可生吃上桌）又是饮品（可上架饮品栏）
+// 维基 milk 同时带 _sustenance + _beverage + aspects.food + aspects.ingredient
+// 上架时两栏同步 +1（菜栏 + 饮栏），库存只扣 1 份
+// 下架时两栏同步 -1，库存返还 1 份
+// 来源：data.json.wiki_tags.双重身份
+const DUAL_SERVE = new Set(Object.keys((DATA.wiki_tags || {}).双重身份 || {}));
 // 维基名 ↔ 项目名（维基条目页/数据页改名的卡牌，项目沿用游戏内实装名）
 const DRINK_WIKI2PROJ = {
   '狡黠蒸馏釜': '淘气蒸馏釜',
-  '圣觚石圣餐': '圣觪石圣餐',
-  '圣觚石圣餐[典藏版]': '圣觪石圣餐[典藏版]',
-  '黑刺李杜松子酒（一瓶）': '黑刺李琴酒（一瓶）',
+  // 黑刺李系列：wiki 数据里"一瓶"用新名"杜松子酒"，"近满/近空/一杯"用旧名"琴酒"
+  // 项目统一用新名"黑刺李杜松子酒"（2026-09-25 用户要求）
+  '黑刺李琴酒（近满）': '黑刺李杜松子酒（近满）',
+  '黑刺李琴酒（近空）': '黑刺李杜松子酒（近空）',
+  '黑刺李琴酒（一杯）': '黑刺李杜松子酒（一杯）',
 };
 const DRINK_PROJ2WIKI = {};
 Object.keys(DRINK_WIKI2PROJ).forEach(k => { DRINK_PROJ2WIKI[DRINK_WIKI2PROJ[k]] = k; });
-// 直接上架饮品里「涩果酒」= 维基「涩果酒（整瓶）」
 DRINK_WIKI2PROJ['涩果酒（整瓶）'] = '涩果酒';
 DRINK_PROJ2WIKI['涩果酒'] = '涩果酒（整瓶）';
 function _buildDrinks(){
@@ -53,17 +60,32 @@ function _buildDrinks(){
       drinkBase.set(c.小杯, drinkBase.get(c.小杯).concat([c]));
     }
   });
-  // 类别分组：用维基原名查容器（c.id）
-  const drinkGroups = (WT_DRINK.类别||[]).map(g => ({
-    title: g.title,
-    items: g.names.map(n => {
+  // 类别分组：用维基原名查容器（c.id）；每个容器后面追加它的单杯
+  // 只对茶/咖啡/井水/酒类追加单杯，特殊类是直接上架不加
+  const drinkGroups = (WT_DRINK.类别||[]).map(g => {
+    const items = [];
+    const addCup = /茶|咖啡|井水|酒/.test(g.title) && g.title !== '饮品 · 涩果酒';
+    for(const n of g.names){
       const cn = DRINK_WIKI2PROJ[n.name]||n.name;
       const c = WT_DRINK.容器[n.id];
-      return c
-        ? {name:cn, src:'1'+(c.比例>=3?'瓶':'壶')+'='+c.比例+'杯'}
-        : {name:cn, src:'直接上架'};
-    })
-  })).filter(g => g.items.length);
+      if(c){
+        items.push({name:cn, src:'1'+(c.比例>=3?'瓶':'壶')+'='+c.比例+'杯'});
+        // 追加单杯（按容器的"杯"字段查杯子表，用维基原名）
+        if(addCup && c.杯){
+          for(const cid in WT_DRINK.杯子){
+            const cr = WT_DRINK.杯子[cid];
+            if(cr && cr.name === c.杯){
+              items.push({name: DRINK_WIKI2PROJ[cr.name]||cr.name, src:'单杯'});
+              break;
+            }
+          }
+        }
+      } else {
+        items.push({name:cn, src:'直接上架'});
+      }
+    }
+    return {title: g.title, items};
+  }).filter(g => g.items.length);
   return {containers, cups, cupAsp, drinkBase, drinkGroups};
 }
 const _DR = _buildDrinks();
@@ -509,6 +531,16 @@ function doEat(name){
     alert('仓库里没有「'+name+'」：先去订货，或在③订货与登记库存里手动登记采集到的原料。');
     return;
   }
+  // 双重身份物品（奶）：菜栏 + 饮栏同步 +1，库存只扣 1 份
+  // 不进 pool（pool 只记做菜/直接上桌的净消耗，双重物品两栏同步上架/下架，无中间态）
+  if(DUAL_SERVE.has(name)){
+    state.dishTable[name] = (state.dishTable[name]||0) + 1;
+    state.drinkTable[name] = (state.drinkTable[name]||0) + 1;
+    state.pool = state.pool || {};
+    state.pool[name] = (state.pool[name]||0) - 1;
+    renderAll();
+    return;
+  }
   state.dishTable[name] = (state.dishTable[name]||0) + 1;
   state.pool = state.pool || {};
   state.pool[name] = (state.pool[name]||0) - 1;
@@ -520,6 +552,18 @@ function doUncook(name, n){
   n = n || 1;
   const cur = state.dishTable[name]||0;
   if(cur <= 0) return;
+  // 双重身份物品（奶）：两栏同步下架 + 库存返还
+  if(DUAL_SERVE.has(name)){
+    const q = Math.min(n, cur);
+    state.dishTable[name] = Math.max(0, cur - q);
+    state.drinkTable[name] = Math.max(0, (state.drinkTable[name]||0) - q);
+    if((state.dishTable[name]||0) <= 0) delete state.dishTable[name];
+    if((state.drinkTable[name]||0) <= 0) delete state.drinkTable[name];
+    state.pool = state.pool || {};
+    state.pool[name] = (state.pool[name]||0) + q;
+    renderAll();
+    return;
+  }
   const q = Math.min(n, cur);
   state.dishTable[name] = cur - q;
   if(state.dishTable[name] <= 0) delete state.dishTable[name];
@@ -596,6 +640,15 @@ function doServeDrink(name, n){
     alert('没有可上架的「'+name+'」：'+hint);
     return;
   }
+  // 双重身份物品（奶）：饮栏 + 菜栏同步 +n，库存扣在 pool（和 doEat 对称）
+  if(DUAL_SERVE.has(name)){
+    state.dishTable[name] = (state.dishTable[name]||0) + n;
+    state.drinkTable[name] = (state.drinkTable[name]||0) + n;
+    state.pool = state.pool || {};
+    state.pool[name] = (state.pool[name]||0) - n;
+    renderAll();
+    return;
+  }
   state.drinkTable[name] = (state.drinkTable[name]||0) + n;
   renderAll();
 }
@@ -603,6 +656,18 @@ function doUnserveDrink(name, n){
   n = n || 1;
   const cur = state.drinkTable[name]||0;
   if(cur <= 0) return;
+  // 双重身份物品（奶）：两栏同步下架 + 库存返还
+  if(DUAL_SERVE.has(name)){
+    const q = Math.min(n, cur);
+    state.dishTable[name] = Math.max(0, (state.dishTable[name]||0) - q);
+    state.drinkTable[name] = Math.max(0, cur - q);
+    if((state.dishTable[name]||0) <= 0) delete state.dishTable[name];
+    if((state.drinkTable[name]||0) <= 0) delete state.drinkTable[name];
+    state.pool = state.pool || {};
+    state.pool[name] = (state.pool[name]||0) + q;
+    renderAll();
+    return;
+  }
   state.drinkTable[name] = cur - n;
   if(state.drinkTable[name] <= 0) delete state.drinkTable[name];
   renderAll();
